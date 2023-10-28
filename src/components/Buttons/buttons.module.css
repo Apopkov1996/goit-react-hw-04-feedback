@@ -1,0 +1,16 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  cursor: pointer;
+  margin-right: 30px;
+  background: whitesmoke;
+  border: 2px solid blue;
+  padding: 5px 10px;
+}
+
+.button:last-child {
+  margin-right: 0;
+}
