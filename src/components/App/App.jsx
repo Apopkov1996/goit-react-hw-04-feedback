@@ -8,47 +8,19 @@ import Appcss from './app.module.css';
 import { useState } from 'react';
 
 export const App = () => {
-  // state = {
-  //   good: 0,
-  //   neutral: 0,
-  //   bad: 0,
-  // };
-
-  // ==Переробив через хук useState==
   const [state, setState] = useState({ good: 0, neutral: 0, bad: 0 });
 
   const handleAddFeedback = name => {
-    // this.setState(prevState => ({ [name]: prevState[name] + 1 }));
-
     setState(prevState => ({ ...prevState, [name]: prevState[name] + 1 }));
   };
 
-  // handleAddGoodFeedback = () => {
-  //   this.setState(prevState => ({ good: prevState.good + 1 }));
-  // };
-
-  // handleAddNeutralFeedback = () => {
-  //   this.setState(prevState => ({ neutral: prevState.neutral + 1 }));
-  // };
-
-  // handleAddBadFeedback = () => {
-  //   this.setState(prevState => ({ bad: prevState.bad + 1 }));
-  // };
-
   const handleTotalFeedback = () => {
-    // const { good, neutral, bad } = this.state;
-    // const total = good + neutral + bad;
-    // return total;
-
     const { good, neutral, bad } = state;
     const total = good + neutral + bad;
     return total;
   };
 
   const handlecountPositiveFeedbackPercentage = () => {
-    // const { good } = this.state;
-    // return Math.round((good / this.handleTotalFeedback()) * 100 || 0);
-
     const { good } = state;
     return Math.round((good / handleTotalFeedback()) * 100 || 0);
   };
